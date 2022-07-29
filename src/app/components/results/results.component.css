@@ -18,3 +18,8 @@ table {
         font-size: 1rem;
     }
 }
+
+button {
+    background-color: rgb(231, 15, 21) !important;
+    color: white;
+}

@@ -1,7 +1,7 @@
 <section class="container-fluid mt-5">
     <article class="bg-black p-4 card shadow">
         <div class="d-flex justify-content-between align-items-center">
-            <h2 class="title-current mb-0">Ultimo resultado</h2>
+            <h2 class="title-current mb-0">Parrilla</h2>
             <p class="mb-0">{{date | date: "dd-MM-YYYY"}}</p>
         </div>
         <h3 class="mt-2">{{raceName}}</h3>
@@ -18,7 +18,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let driver of drivers">
+                    <tr *ngFor="let driver of drivers" class="align-middle">
                         <td>{{driver.position}}</td>
                         <td>{{driver.Driver.givenName}} {{driver.Driver.familyName}}</td>
                         <td>{{driver.Constructor.name}}</td>
@@ -30,6 +30,30 @@
         </div>
     </article>
     <article class="bg-black p-4 card shadow mt-3">
-        <h2 class="title-history">Historico</h2>
+        <h2 class="title-history">Temporada <span class="text-white">{{season}}</span></h2>
+        <p class="title-history">Total de carreras: <span class="text-white">{{round}}</span></p>
+        <div class="d-flex justify-content-between align-items-center">
+            <table class="table table-dark table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Gran premio</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Circuito</th>
+                        <th scope="col">Localidad</th>
+                        <th scope="col" class="d-none d-md-block">Detalles</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let race of races" class="align-middle">
+                        <td>{{race.raceName}}</td>
+                        <td>{{race.date| date: "dd-MM-YYYY"}}</td>
+                        <td>{{race.Circuit.circuitName}}</td>
+                        <td>{{race.Circuit.Location.country}}</td>
+                        <td class="d-none d-md-block"><button class="btn ">Mas</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </article>
 </section>
