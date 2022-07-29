@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+
+:root {
+    --font-family: 'Overpass', sans-serif;
+    --backgroundColor: hsl(0, 0%, 14%);
+    --primaryColor: black;
+    --fontSize: 1em;
+}
+
+
+body {
+    font-family: var(--font-family) !important;
+    color: white !important;
+    background-color: var(--backgroundColor) !important;
+}
