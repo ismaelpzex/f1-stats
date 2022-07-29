@@ -22,4 +22,13 @@ export class ResultsService {
   getOlder(year: number): Promise<any> {
     return lastValueFrom(this.httpClient.get<any>(`${this.url}${year}.json`))
   }
+
+  getResultBySeasonAndRound(year: number, season: number): Promise<any> {
+    return lastValueFrom(this.httpClient.get<any>(`${this.url}${year}/${season}/results.json`));
+  }
+
+  getQualyBySeasonAndRound(season: number, round: number): Promise<any> {
+    return lastValueFrom(this.httpClient.get<any>(`${this.url}${round}/${season}/qualifying.json`));
+  }
 }
+

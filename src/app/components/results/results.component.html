@@ -33,7 +33,7 @@
         <h2 class="title-history">Temporada <span class="text-white">{{season}}</span></h2>
         <p class="title-history">Total de carreras: <span class="text-white">{{round}}</span></p>
         <div class="d-flex justify-content-between align-items-center">
-            <table class="table table-dark table-striped table-hover">
+            <table class="table table-dark table-striped">
                 <thead>
                     <tr>
                         <th scope="col">Gran premio</th>
@@ -45,12 +45,14 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let race of races" class="align-middle">
-                        <td>{{race.raceName}}</td>
+                    <tr *ngFor="let race of races" class="align-middle race-result">
+                        <td [routerLink]="['/race-result', race.season, race.round]">{{race.raceName}}</td>
                         <td>{{race.date| date: "dd-MM-YYYY"}}</td>
                         <td>{{race.Circuit.circuitName}}</td>
                         <td>{{race.Circuit.Location.country}}</td>
-                        <td class="d-none d-md-block"><button class="btn ">Mas</button></td>
+                        <td class="d-none d-md-block"><button class="btn "
+                                [routerLink]="['/race-result', race.season, race.round]">Mas</button>
+                        </td>
                     </tr>
                 </tbody>
             </table>

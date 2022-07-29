@@ -1,25 +1,12 @@
-.title-current {
-    color: rgb(231, 15, 21);
-    font-weight: bold;
-}
-
-.title-history {
-    color: rgb(231, 15, 21);
-    font-weight: bold;
-}
-
-table {
-    font-size: 0.8rem;
-
-}
-
-@media (min-width: 768px) {
-    table {
-        font-size: 1rem;
-    }
-}
-
 button {
     background-color: rgb(231, 15, 21) !important;
     color: white;
+}
+
+.race-result:hover td {
+    color: rgb(231, 15, 21) !important;
+}
+
+.race-result td {
+    cursor: pointer;
 }

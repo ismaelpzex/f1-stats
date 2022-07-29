@@ -45,12 +45,12 @@ export class ResultsComponent implements OnInit {
     this.drivers = result.MRData.RaceTable.Races[0].Results;
     this.round = result.MRData.RaceTable.round;
     this.season = result.MRData.RaceTable.season;
-    console.log(result.MRData.RaceTable.round);
   }
 
   mapDataOlder(older: any, result: any) {
     this.races = older.MRData.RaceTable.Races.reverse();
     this.races = this.races.filter(value => value.date <= result.MRData.RaceTable.Races[0].date)
+    console.log(this.races);
   }
 
 }
